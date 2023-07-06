@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 
-const Recipe = (props) => {
+const Card = (props) => {
 
   return (
     <View style={styles.item}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Recipe;
+export default Card;

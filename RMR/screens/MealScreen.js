@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, KeyboardAvoidingView, TextInp
 import React, { useState, useEffect } from 'react';
 import { doc, setDoc, collection, getDocs, deleteDoc} from "firebase/firestore";
 import { db } from '../config';
-import Recipe from '../components/Recipe';
+import Card from '../components/Card';
 
 export default function MealScreen() {
   const [recipe, setRecipe] = useState('');
@@ -55,7 +55,7 @@ export default function MealScreen() {
           renderItem={({ item }) => (
             <View style={styles.recipeContainer}>
               <TouchableOpacity onPress={() => openRecipeLink(item.recipe)}>
-                <Recipe text={item.recipe} />
+                <Card text={item.recipe} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => deleteRecipe(item.id)}
