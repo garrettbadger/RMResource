@@ -102,8 +102,8 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingHorizontal: 20,
     width: '100%',
-    height: '70%',
-    backgroundColor: '#ffffff',
+    height: '85%',
+    backgroundColor: 'lightblue',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     shadowColor: '#000000',
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 15,
     paddingHorizontal: 15,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'lightblue',
     borderRadius: 60,
     borderWidth: 0,
   },
@@ -179,6 +179,6 @@ const styles = StyleSheet.create({
   deleteButtonText: {
     color: '#ffffff',
     fontWeight: 'bold',
-    fontSize: 12,
+    fontSize: 16,
   },
 });

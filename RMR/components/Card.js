@@ -17,13 +17,14 @@ const Card = (props) => {
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: '#FFF',
+    backgroundColor: 'lightblue',
     padding: 15,
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 20,
+    
   },
   itemLeft: {
     flexDirection: 'row',
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
     maxWidth: '80%',
   },
   circular: {
+    marginLeft: 10,
     width: 12,
     height: 12,
     borderColor: '#55BCF6',

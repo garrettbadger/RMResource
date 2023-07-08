@@ -9,7 +9,7 @@ const Nav = (props) => {
             <View style={styles.navItem}><Text style={styles.text}>Meals</Text></View>
             <View style={styles.navItem}><Text style={styles.text}>Workout</Text></View>
             <View style={styles.navItem}><Text style={styles.text}>Music</Text></View>
-            <View style={styles.navItem}><Text style={styles.text}>Mentor</Text></View>
+
         </View>
     )
 }

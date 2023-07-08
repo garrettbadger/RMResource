@@ -1,33 +1,47 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Nav from '../components/Nav';
 import Dashboard from '../components/Dashboard';
 
 export default function HomeScreen({ navigation }) {
   return (
-    
-      
-      <View style={styles.container}>
-    
-        <View style={styles.navContainer}>
-            <Button style={styles.nav} title="Study" onPress={() => navigation.navigate("Study")}/>
-            <Button style={styles.nav} title="Meals" onPress={() => navigation.navigate("Meals")}/>
-            <Button style={styles.nav} title="Music" onPress={() => navigation.navigate("Music")}/>
-            <Button style={styles.nav} title="Mentor" onPress={() => navigation.navigate("Mentor")}/>
-            <Button style={styles.nav} title="Workout" onPress={() => navigation.navigate("Workout")}/>
-        </View>
-        <View style={styles.main}>
-          <Dashboard text='Home' style={styles.dashboard}/>
-          <Dashboard text='Study' style={styles.dashboard}/>
-          <Dashboard text='Meals' style={styles.dashboard}/>
-          <Dashboard text='Workout' style={styles.dashboard}/>
-          <Dashboard text='Music' style={styles.dashboard}/>
-          <Dashboard text='Mentor' style={styles.dashboard}/>
-        </View>
-        
+    <View style={styles.container}>
+      <View style={styles.navContainer}>
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => navigation.navigate("Study")}
+        >
+          <Text style={styles.buttonText}>Study</Text>
+        </TouchableOpacity>
+        <View style={styles.navSpace}></View>
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => navigation.navigate("Meals")}
+        >
+          <Text style={styles.buttonText}>Meals</Text>
+        </TouchableOpacity>
+        <View style={styles.navSpace}></View>
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => navigation.navigate("Music")}
+        >
+          <Text style={styles.buttonText}>Music</Text>
+        </TouchableOpacity>
+        <View style={styles.navSpace}></View>
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => navigation.navigate("Workout")}
+        >
+          <Text style={styles.buttonText}>Workout</Text>
+        </TouchableOpacity>
       </View>
-      
-   
-    
+      <View style={styles.main}>
+        <Dashboard text='Home' style={styles.dashboard}/>
+        <Dashboard text='Study' style={styles.dashboard}/>
+        <Dashboard text='Meals' style={styles.dashboard}/>
+        <Dashboard text='Workout' style={styles.dashboard}/>
+        <Dashboard text='Music' style={styles.dashboard}/>
+      </View>
+    </View>
   );
 }
 
@@ -40,22 +54,35 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   navContainer: {
+    position: 'absolute',
     flex: 1,
     flexDirection: 'row',
+    padding: 15,
+    bottom: 50
+  },
+  navButton: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: 'lightblue',
+    borderRadius: 10,
     
   },
-  nav:{
-    margin:20,
+  buttonText: {
+    fontSize: 18,
+    color: '#333',
+    fontWeight: 'bold',
+    
   },
-  main:{
+  navSpace: {
+    width: 10,
+  },
+  main: {
     flex: 15,
     width: '100%',
     height: 100,
-
   },
-  dashboard:{
+  dashboard: {
     padding: 20,
     margin: 20,
-    
   },
 });

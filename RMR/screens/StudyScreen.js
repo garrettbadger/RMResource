@@ -68,9 +68,9 @@ export default function StudyScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Today's tasks</Text>
+        <Text style={styles.sectionTitle}>Study Goal</Text>
         <View style={styles.items}>
-          <Text>Goal: {goal}m Read: {studied}m Time left: {goal - studied}m</Text>
+          <Text style={styles.text}>Goal: {goal}m Read: {studied}m Time left: {goal - studied}m</Text>
         </View>
       </View>
 
@@ -110,14 +110,14 @@ export default function StudyScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8EAED',
+    backgroundColor: '#348ee3',
   },
   tasksWrapper: {
     paddingTop: 0,
     paddingHorizontal: 20,
-    width: 250,
+    width: 350,
     height: 200,
-    backgroundColor: '#fff',
+    backgroundColor: 'lightblue',
     borderRadius: 80,
     justifyContent: 'center',
     alignItems: 'center',
@@ -125,14 +125,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     position: 'absolute',
     bottom: 450,
-    right: 80,
+    right: 25,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
   },
   items: {
     marginTop: 30,
+    fonstSize: 30,
+  },
+  text: {
+    fontSize: 20,
   },
   inputStudyTime: {
     position: 'absolute',
@@ -151,20 +155,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     padding: 20,
+    
   },
   input: {
     paddingVertical: 15,
     paddingHorizontal: 15,
-    backgroundColor: '#fff',
+    backgroundColor: 'lightblue',
     borderRadius: 60,
     borderColor: '#C0C0C0',
     borderWidth: 1,
     width: 250,
+    fontSize:20,
   },
   addWrapper: {
     width: 60,
     height: 60,
-    backgroundColor: '#fff',
+    backgroundColor: 'lightblue',
     borderRadius: 60,
     justifyContent: 'center',
     alignItems: 'center',

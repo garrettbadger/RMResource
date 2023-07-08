@@ -102,8 +102,8 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingHorizontal: 20,
     width: '100%',
-    height: '70%',
-    backgroundColor: '#ffffff',
+    height: '85%',
+    backgroundColor: 'lightblue',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     shadowColor: '#000000',
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.1,
     shadowRadius: 3,
-    elevation: 5,
+    
   },
   sectionTitle: {
     fontSize: 24,
@@ -126,19 +126,21 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   inputRecipe: {
+    
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    padding: 20,
+    padding: 10,
     backgroundColor: '#ffffff',
   },
   input: {
     flex: 1,
     paddingVertical: 15,
     paddingHorizontal: 15,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'lightblue',
     borderRadius: 60,
     borderWidth: 0,
+    
   },
   addWrapper: {
     width: 60,
@@ -158,7 +160,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 10,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#7d7d80',
     padding: 10,
     borderRadius: 10,
     shadowColor: '#000000',
@@ -179,6 +181,6 @@ const styles = StyleSheet.create({
   deleteButtonText: {
     color: '#ffffff',
     fontWeight: 'bold',
-    fontSize: 12,
+    fontSize: 16,
   },
 });

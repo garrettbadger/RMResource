@@ -28,11 +28,7 @@ export default function App() {
               component={MealScreen}
               options={{title: "Back"}}
             />
-             <Stack.Screen
-              name="Mentor"
-              component={MentorScreen}
-              options={{title: "Back"}}
-            />
+             
              <Stack.Screen
               name="Music"
               component={MusicScreen}
