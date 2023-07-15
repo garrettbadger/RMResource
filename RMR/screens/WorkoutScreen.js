@@ -19,7 +19,9 @@ export default function WorkoutScreen() {
     const querySnapshot = await getDocs(collection(db, 'Workouts'));
     const workouts = [];
     querySnapshot.forEach((doc) => {
-      workouts.push({ id: doc.id, workout: 'https://'+doc.data().workout });
+      
+      workouts.push({ id: doc.id, workout: decodeURIComponent(doc.data().workout) });
+
     });
     setWorkoutBox(workouts);
   };
@@ -27,8 +29,9 @@ export default function WorkoutScreen() {
   // Function to add a workout to the Firestore database
   const addWorkout = async () => {
     if (workout !== '') {
-      await setDoc(doc(db, 'Workouts', workout), {
-        workout: workout
+      const encodedWorkoutURL = encodeURIComponent(workout);
+      await setDoc(doc(db, 'Workouts', encodedWorkoutURL), {
+        workout: encodedWorkoutURL
       });
       setWorkout('');
       Keyboard.dismiss();
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     width: '100%',
     height: '85%',
-    backgroundColor: 'lightblue',
+    backgroundColor: '#eb8981',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     shadowColor: '#000000',
@@ -116,7 +119,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 34,
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#333333',

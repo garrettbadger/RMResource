@@ -35,11 +35,16 @@ export default function HomeScreen({ navigation }) {
         </TouchableOpacity>
       </View>
       <View style={styles.main}>
-        <Dashboard text='Home' style={styles.dashboard}/>
+        {/* <Dashboard text='Home' style={styles.dashboard}/>
         <Dashboard text='Study' style={styles.dashboard}/>
         <Dashboard text='Meals' style={styles.dashboard}/>
         <Dashboard text='Workout' style={styles.dashboard}/>
-        <Dashboard text='Music' style={styles.dashboard}/>
+        <Dashboard text='Music' style={styles.dashboard}/> */}
+        <Text style={styles.title}>R.M. Resource</Text>
+        <Text style={styles.description}>“A good character is something you must make for yourself. 
+        It cannot be inherited from parents. It cannot be created by having extraordinary advantages. 
+        It isn’t a gift of birth, wealth, talent, or station. It is the result of your own endeavor. 
+        It is the reward that comes from living good principles and manifesting a virtuous and honorable life.” -L. Tom Perry</Text>
       </View>
     </View>
   );
@@ -48,10 +53,23 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#46494d',
     alignItems: 'center',
     justifyContent: 'center',
     paddingBottom: 5,
+  },
+  title: {
+    fontSize: 45,
+    textAlign: 'center', 
+    padding: 30,
+    color: 'white',
+
+  },
+  description: {
+    textAlign: 'center', 
+    fontSize: 24,
+    paddingTop: 30,
+    color: 'white',
   },
   navContainer: {
     position: 'absolute',

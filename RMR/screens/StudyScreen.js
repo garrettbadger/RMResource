@@ -70,11 +70,14 @@ export default function StudyScreen() {
       <View style={styles.tasksWrapper}>
         <Text style={styles.sectionTitle}>Study Goal</Text>
         <View style={styles.items}>
-          <Text style={styles.text}>Goal: {goal}m Read: {studied}m Time left: {goal - studied}m</Text>
+          <Text style={styles.text}>Goal: {goal} min </Text>
+          <Text style={styles.text}>Read: {studied} min </Text>
+          <Text style={styles.text}>Time left: {goal - studied} min</Text>
         </View>
       </View>
-
+      <Text style={styles.read}>Read:</Text>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.inputStudyTime}>
+      
         <TextInput
           style={styles.input}
           placeholder="Input study time goal"
@@ -88,7 +91,7 @@ export default function StudyScreen() {
           </View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
-
+      <Text style={styles.goal}>Goal:</Text>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.inputStudiedTime}>
         <TextInput
           style={styles.input}
@@ -137,6 +140,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
+    padding: 3,
   },
   inputStudyTime: {
     position: 'absolute',
@@ -177,5 +181,22 @@ const styles = StyleSheet.create({
     borderColor: '#C0C0C0',
     borderWidth: 1,
   },
-  addText: {},
+  read: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    position: 'absolute',
+    bottom: 240,
+    right: 200,
+    
+  },
+  goal: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    position: 'absolute',
+    bottom: 145,
+    right: 200,
+    
+  },
 });

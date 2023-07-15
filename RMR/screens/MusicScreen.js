@@ -19,7 +19,7 @@ export default function MealScreen() {
     const querySnapshot = await getDocs(collection(db, 'Music'));
     const music = [];
     querySnapshot.forEach((doc) => {
-      music.push({ id: doc.id, music: 'https://'+doc.data().music });
+      music.push({ id: doc.id, music: decodeURIComponent(doc.data().music) });
     });
     setMusicBox(music);
   };
@@ -27,8 +27,9 @@ export default function MealScreen() {
   // Function to add a music to the Firestore database
   const addMusic = async () => {
     if (music !== '') {
-      await setDoc(doc(db, 'Music', music), {
-        music: music
+      const encodedMusicURL = encodeURIComponent(music); // URL encode the music URL
+      await setDoc(doc(db, 'Music', encodedMusicURL), {
+        music: encodedMusicURL
       });
       setMusic('');
       Keyboard.dismiss();
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     width: '100%',
     height: '85%',
-    backgroundColor: 'lightblue',
+    backgroundColor: 'lightgreen',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     shadowColor: '#000000',
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 34,
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#333333',

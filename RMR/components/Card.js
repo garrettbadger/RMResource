@@ -7,10 +7,10 @@ const Card = (props) => {
   return (
     <View style={styles.item}>
       <View style={styles.itemLeft}>
-        <View style={styles.square}></View>
+        
         <Text style={styles.itemText}>{props.text}</Text>
       </View>
-      <View style={styles.circular}></View>
+      
     </View>
   )
 }
@@ -18,12 +18,14 @@ const Card = (props) => {
 const styles = StyleSheet.create({
   item: {
     backgroundColor: 'lightblue',
-    padding: 15,
+    padding: 12,
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 20,
+    height: 65,
+    width: 250
     
   },
   itemLeft: {
@@ -40,7 +42,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   itemText: {
-    maxWidth: '80%',
+    maxWidth: '100%',
   },
   circular: {
     marginLeft: 10,

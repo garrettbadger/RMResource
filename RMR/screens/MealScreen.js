@@ -19,7 +19,7 @@ export default function MealScreen() {
     const querySnapshot = await getDocs(collection(db, 'Recipes'));
     const recipes = [];
     querySnapshot.forEach((doc) => {
-      recipes.push({ id: doc.id, recipe: 'https://'+doc.data().recipe });
+      recipes.push({ id: doc.id, recipe: decodeURIComponent(doc.data().recipe) });
     });
     setRecipeBox(recipes);
   };
@@ -27,8 +27,9 @@ export default function MealScreen() {
   // Function to add a recipe to the Firestore database
   const addRecipe = async () => {
     if (recipe !== '') {
-      await setDoc(doc(db, 'Recipes', recipe), {
-        recipe: recipe
+      const encodedRecipeURL = encodeURIComponent(recipe);
+      await setDoc(doc(db, 'Recipes', encodedRecipeURL), {
+        recipe: encodedRecipeURL
       });
       setRecipe('');
       Keyboard.dismiss();
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     width: '100%',
     height: '85%',
-    backgroundColor: 'lightblue',
+    backgroundColor: '#ebdb81',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     shadowColor: '#000000',
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
     
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 34,
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#333333',
